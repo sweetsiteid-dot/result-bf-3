@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boyfriend Day — untuk Akbar</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥀</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ambient particles -->
+<canvas id="embers"></canvas>
+
+<!-- ===================== LOCK SCREEN ===================== -->
+<section id="lock-screen">
+  <div class="lock-card">
+    <div class="lock-ornament">⸙</div>
+    <p class="lock-eyebrow">Boyfriend Day</p>
+    <h1 class="lock-title">Satu pintu lagi<br>sebelum ceritanya dibuka.</h1>
+    <p class="lock-sub">Masukkan kode yang cuma kamu tahu.</p>
+
+    <div class="pin-boxes" id="pinBoxes">
+      <input type="password" inputmode="numeric" maxlength="1" class="pin-box" data-i="0">
+      <input type="password" inputmode="numeric" maxlength="1" class="pin-box" data-i="1">
+      <input type="password" inputmode="numeric" maxlength="1" class="pin-box" data-i="2">
+      <input type="password" inputmode="numeric" maxlength="1" class="pin-box" data-i="3">
+    </div>
+    <p class="pin-error" id="pinError">Kodenya belum pas. Coba lagi ya.</p>
+    <button class="lock-btn" id="unlockBtn">Buka</button>
+  </div>
+</section>
+
+<!-- ===================== MAIN SITE ===================== -->
+<main id="site" hidden>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-eyebrow">Untuk Akbar</p>
+    <h1 class="hero-title">Boyfriend<br>Day</h1>
+    <p class="hero-sub">dari Deandra, dengan segala yang nggak selalu sempat terucap.</p>
+    <div class="hero-divider"><span></span>⸙<span></span></div>
+    <a href="#letter" class="scroll-cue">Gulir ke bawah</a>
+  </section>
+
+  <!-- LETTER -->
+  <section class="letter" id="letter">
+    <span class="quote-mark">“</span>
+    <div class="letter-body">
+      <p>Akbar,</p>
+      <p>Hari ini bukan tanggal merah, bukan juga hari besar di kalender siapa‑siapa — tapi hari ini tanggal merah di kalender aku, khusus untuk kamu. Boyfriend Day, hari di mana aku berhenti sebentar dari segala kesibukan, cuma buat bilang: makasih udah jadi kamu.</p>
+      <p>Makasih udah sabar dengerin cerita aku yang kadang muter-muter nggak jelas ujungnya. Makasih udah jadi tempat pulang paling nyaman, bahkan di hari-hari aku lagi berantakan. Nggak semua hal besar butuh perayaan besar — kadang cukup satu halaman kecil kayak ini, buat bilang kamu berarti, lebih dari yang biasa aku tunjukin.</p>
+      <p>Jadi hari ini, izinin aku balik peran — biar kamu yang dimanja, kamu yang dibikin senyum, kamu yang jadi alasan aku iseng begadang bikin website receh ini jam segini.</p>
+      <p>Selamat Boyfriend Day, sayang. Terima kasih sudah memilih untuk terus tinggal.</p>
+    </div>
+    <p class="letter-sign">— Deandra</p>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <p class="section-eyebrow">Momen Kita</p>
+    <h2 class="section-title">Tujuh potong waktu<br>yang aku simpan baik-baik.</h2>
+
+    <div class="mosaic">
+      <figure class="m-item m-1"><img src="assets/img/photo1.jpg" alt="Momen 1" loading="lazy"></figure>
+      <figure class="m-item m-2"><img src="assets/img/photo2.jpg" alt="Momen 2" loading="lazy"></figure>
+      <figure class="m-item m-3"><img src="assets/img/photo3.jpg" alt="Momen 3" loading="lazy"></figure>
+      <figure class="m-item m-4"><img src="assets/img/photo4.jpg" alt="Momen 4" loading="lazy"></figure>
+      <figure class="m-item m-5"><img src="assets/img/photo5.jpg" alt="Momen 5" loading="lazy"></figure>
+      <figure class="m-item m-6"><img src="assets/img/photo6.jpg" alt="Momen 6" loading="lazy"></figure>
+      <figure class="m-item m-7"><img src="assets/img/photo7.jpg" alt="Momen 7" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="closing">
+    <div class="hero-divider"><span></span>⸙<span></span></div>
+    <p class="closing-text">Terima kasih sudah membuka pintunya.<br>Sisanya, biar waktu yang terus kita tulis bareng.</p>
+    <p class="closing-sign">Dengan cinta,<br><span>Deandra</span></p>
+  </section>
+
+  <footer class="site-footer">dibuat dengan diam-diam, untuk Akbar 🥀</footer>
+</main>
+
+<!-- ===================== LIGHTBOX ===================== -->
+<div id="lightbox" class="lightbox" hidden>
+  <button class="lightbox-close" id="lightboxClose">✕</button>
+  <img src="" alt="" id="lightboxImg">
+</div>
+
+<!-- ===================== MUSIC PLAYER ===================== -->
+<div class="player" id="player" hidden>
+  <button class="player-disc" id="playerToggle" aria-label="Putar atau jeda musik">
+    <svg viewBox="0 0 40 40" class="disc-svg">
+      <circle cx="20" cy="20" r="18" class="disc-ring"></circle>
+      <circle cx="20" cy="20" r="3.2" class="disc-hole"></circle>
+    </svg>
+  </button>
+  <div class="player-meta">
+    <p class="player-title">Shape of My Heart</p>
+    <p class="player-sub" id="playerState">tap untuk putar</p>
+  </div>
+</div>
+<audio id="audio" src="assets/music/shapeofmyheart.mp3" loop preload="none"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
